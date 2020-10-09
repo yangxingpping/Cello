@@ -184,6 +184,8 @@ extern var Mutex;
 extern var Thread;
 extern var Process;
 extern var Function;
+extern var Demo;
+
 
 extern var Exception;
 extern var IOError;
@@ -281,6 +283,10 @@ struct Map {
 
 struct File {
   FILE* file;
+};
+
+struct Demo{
+  int m_x;
 };
 
 struct Process {
