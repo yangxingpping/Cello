@@ -12,6 +12,8 @@
 *.gz
 *.class
 
+/build/
+
 # Tests
 test.bin
 test.txt
