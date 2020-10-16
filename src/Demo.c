@@ -1,10 +1,6 @@
 #include "Cello.h"
 
 
-struct Demo{
-    int m_x;
-};
-
 static const char* Demo_Name(void) {
   return "Demo";
 }
