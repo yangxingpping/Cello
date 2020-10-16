@@ -12,5 +12,7 @@ link_libraries(Cello)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+AUX_SOURCE_DIRECTORY(./src cello_src)
 
-ADD_EXECUTABLE(hello ./main.c)
+
+ADD_EXECUTABLE(hello ./main.c ${cello_src})
