@@ -43,15 +43,13 @@ static void Demo_Close(var self);
 
 static void Demo_New(var self, var args) {
 	struct Demo* p = self;
-    printf("demo new function\n");
 	size_t arglen = len(args);
 	if (len(args) > 0)
 	{
 		p->userAlloc = get(args, $I(0));
 		p->userDelloc = get(args, $I(1));
 		arglen = len(args);
-		p->allocArgs = args;// new(Tuple, args);
-		//p->allocArgs = args;
+		p->allocArgs = args;
 	}
 	arglen = len(p->allocArgs);
 	Demo_Open(self);
@@ -59,8 +57,6 @@ static void Demo_New(var self, var args) {
 
 static void Demo_Del(var self) {
 	Demo_Close(self);
-    printf("demo del function\n");
-	
 }
 
 static void Demo_Close(var self) {
@@ -86,7 +82,6 @@ static void Demo_Close(var self) {
 }
 
 static void Demo_Open(var self){
-    printf("demo open\n");
 	struct Demo* p = self;
 	if (p)
 	{
@@ -94,7 +89,6 @@ static void Demo_Open(var self){
 		call(p->userAlloc, self, p->allocArgs);
 	}
 }
-
 
 var Demo = Cello(Demo,
   Instance(Doc,
