@@ -134,10 +134,21 @@ static var Function_Call(var self, var args) {
   return f->func(args);
 }
 
+static void F_new(var self, var args) {
+	struct Function* p = self;
+	p->func = get(args, $I(0));
+}
+
+static void F_del(var self) {
+	struct Function* p = self;
+	p->func = NULL;
+}
+
 var Function = Cello(Function,
   Instance(Doc,
     Function_Name,       Function_Brief,    Function_Description,
     Function_Definition, Function_Examples, NULL),
+	Instance(New, &F_new, &F_del),
   Instance(Call, Function_Call));
 
 

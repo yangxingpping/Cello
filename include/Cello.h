@@ -114,6 +114,8 @@
 #include <math.h>
 #include <time.h>
 
+#include "ud.h"
+
 #ifdef CELLO_WINDOWS
 #include <windows.h>
 #ifndef CELLO_NSTRACE
@@ -286,7 +288,13 @@ struct File {
 };
 
 struct Demo{
-  int m_x;
+	union data
+	{
+		struct Test1;
+	}data;
+	var userAlloc;
+	var allocArgs;
+	var userDelloc;
 };
 
 struct Process {
