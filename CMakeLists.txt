@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 PROJECT(hello)
 add_definitions(-DCELLO_NGC)
-add_definitions(-DNEWUWEBSCKETS)
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 include_directories(../common/include)
 set(CMAKE_BUILD_TYPE "Debug")
 

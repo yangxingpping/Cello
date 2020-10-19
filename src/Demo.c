@@ -58,18 +58,20 @@ static void Demo_New(var self, var args) {
 }
 
 static void Demo_Del(var self) {
-	//Demo_Close(self);
+	Demo_Close(self);
     printf("demo del function\n");
 	
 }
 
 static void Demo_Close(var self) {
-    printf("demo close\n");
+    
 	struct Demo* p = self;
-	if (p)
+	if (!p || !p->userAlloc || !p->userDelloc)
 	{
-		call(p->userDelloc, self);
+		return;
 	}
+	call(p->userDelloc, self);
+	
 	if (p->userAlloc)
 	{
 		del(p->userAlloc);
