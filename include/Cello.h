@@ -290,7 +290,7 @@ struct File {
 struct Demo{
 	union data
 	{
-		struct Test1;
+		struct UserAllocMem;
 	}data;
 	var userAlloc;
 	var allocArgs;
