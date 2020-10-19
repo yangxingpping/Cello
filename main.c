@@ -8,7 +8,7 @@
 
 void alloc1(var args) {
 	printf("user alloc1\n");
-	struct Test1* p = get(args, $I(0));
+	struct UserAllocMem* p = get(args, $I(0));
 	p->len = c_int(get(get(args, $I(1)), $I(2)));
 	p->pt = (char*)malloc(p->len);
 
@@ -16,7 +16,7 @@ void alloc1(var args) {
 }
 
 void delloc1(var self) {
-	struct Test1* p = get(self, $I(0));
+	struct UserAllocMem* p = get(self, $I(0));
 	printf("user delloc1\n");
 	if (p)
 	{
@@ -31,13 +31,9 @@ void delloc1(var self) {
 
 int main(int argc, char** argv)
 {
-
-	//var newa = new(Demo, new(Function, &alloc1), new(Function, &delloc1), $I(32));
-
-	//del(newa);
 	with(f in new(Demo, new(Function, &alloc1), new(Function, &delloc1), $I(32)))
 	{
-
+		
 	}
 
 	/*with(f in new(File, $S("hello.txt"), $S("r"))) {

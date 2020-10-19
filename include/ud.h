@@ -2,7 +2,7 @@
 #pragma once
 #include <stdint.h>
 
-struct Test1
+struct UserAllocMem
 {
 	char* pt;
 	int64_t len;
