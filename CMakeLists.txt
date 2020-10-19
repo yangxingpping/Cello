@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 PROJECT(hello)
-add_definitions(-DOTL_ODBC_UNIX)
+add_definitions(-DCELLO_NGC)
 add_definitions(-DNEWUWEBSCKETS)
 include_directories(../common/include)
 set(CMAKE_BUILD_TYPE "Debug")
